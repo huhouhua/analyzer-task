@@ -1,5 +1,5 @@
 # insight-chart是什么？
-是一个定义定时扫描任务的项目，并且这些项目集成了sonarQube插件， 提供给[`code-analyzer`](http://172.17.189.70/sonar/code-analyzer)组件来读取定义的任务并完成代码扫描工作，自动扫描文件变更同步机制，这个仓库可以定义在任何的组里面，也可以将扫描任务文件独立出来，定义在不同的项目里面，code-analyzer是如何使用的，请点击[`code-analyzer`](http://172.17.189.70/sonar/code-analyzer)。
+是一个定义定时扫描任务的项目，并且这些项目集成了sonarQube插件， 提供给[`code-analyzer`](http://172.17.189.70/sonar/code-analyzer)组件来读取定义的任务并完成代码扫描工作，自动扫描文件变更同步机制，这个仓库可以定义在任何的组里面，也可以将扫描任务文件独立出来，定义在不同的项目里面，code-analyzer是如何使用的请点击[`code-analyzer`](http://172.17.189.70/sonar/code-analyzer)。
 
 # 准备工作
 
