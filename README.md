@@ -3,7 +3,7 @@
 
 # 准备工作
 
-**taskFilePath**可以定义在任何的项目里面，但是需要在[`code-analyzer`](http://172.17.189.70/sonar/code-analyzer)组件运行时，在**application-prod.yaml**文件里指定以下参数。
+**taskFilePath**可以定义在任何的项目里面，但是需要在[`code-analyzer`](http://172.17.189.70/sonar/code-analyzer#1%E8%B0%83%E5%BA%A6%E9%85%8D%E7%BD%AE)组件运行时，在**application-prod.yaml**文件里指定以下参数。
  ``` yaml
  git-repository:
   repository:
@@ -14,7 +14,7 @@
 
 # code-analyzer如何部署
 ### 1. 准备工作
-  请点击[`code-analyzer`](http://172.17.189.70/sonar/code-analyzer)，查看安装docker、sonarQube、相关参数解释与配置等。
+  请点击[`code-analyzer`](http://172.17.189.70/sonar/code-analyzer#%E4%B8%80%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87)，查看安装docker、sonarQube、相关参数解释与配置等。
 ### 2. 镜像拉取
 ``` shell
  docker pull 172.17.162.231/devops/analyzer-scheduler:1.0
