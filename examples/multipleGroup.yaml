@@ -1,0 +1,85 @@
+global:
+  sonar:
+    dockerFilePath: release/docker/SonarDockerfile
+    nativeFilePath: sonar-project.properties
+    mode: dockerfile
+  parallel: 5 #并行数，每一组group的项目一次扫描多少个项目，如果group没有指定parallel参数的话，那么会默认使用这个并行数。
+  triggerTimeCron: "0 5 * * 1" #任务扫描时间，这里指定为每周一上午5点开始扫描
+  repo:
+    branch: develop #扫描的仓库分支，如果projects没有指定branch参数的话，那么会默认使用这个分支。
+groups: #组定义，可以定义多个组，放在最前面的组，最先开始扫描。
+- name: app-xxx #组名，可以重复，可以简单的定义为比如xxx业务下所有的前端服务，用英文表示
+  parallel: 4 #并行数，一次扫描，扫描多少个项目。
+  description: "app-xxx example groups,this is for testing!" #组描述
+  projects: # 项目定义
+  - name: app-web #项目名，可以重复
+    mode: dockerfile #项目扫描方式，默认使用dockerfile
+    description: "app-web is front-end project！"  #项目描述
+    repo: #仓库定义
+      url: git@172.17.189.70:xxxxx-groups/app-xxx.git #仓库地址，只支持ssh方式。
+      branch: develop #仓库扫描的分支
+      sonarFilePath: release/docker/SonarDockerfile #dockerfile 扫描的文件路径，这个路径是任务仓库里面的路径。
+  - name: app-service
+    mode: dockerfile
+    description: "app-service is back-end project！"  
+    repo:
+      url: git@172.17.189.70:xxxxx-groups/app-service-xxx.git
+      branch: test #仓库扫描的分支,扫描这个仓库的test分支。
+      sonarFilePath: release/docker/SonarDockerfile 
+  - name: app-mobile
+    mode: dockerfile
+    description: "app-mobile is mobile project！"
+    repo: 
+      url: git@172.17.189.70:xxxxx-groups/app-mobile-xxx.git
+      branch: fix-bug #仓库扫描的分支,扫描这个仓库的fix-bug分支。
+      sonarFilePath: release/docker/SonarDockerfile
+- name: service-xxx  #第二组
+  parallel: 4 
+  description: "service-xxx example groups,this is for testing!"
+  projects: 
+  - name: service-web 
+    mode: dockerfile 
+    description: "service-web is front-end project！" 
+    repo:
+      url: git@172.17.189.70:xxxxx-groups/service-xxx.git 
+      branch: develop 
+      sonarFilePath: release/docker/SonarDockerfile
+  - name: service-service
+    mode: dockerfile
+    description: "service-service is back-end project！"  
+    repo:
+      url: git@172.17.189.70:xxxxx-groups/service-service-xxx.git
+      branch: test 
+      sonarFilePath: release/docker/SonarDockerfile 
+  - name: service-mobile
+    mode: dockerfile
+    description: "service-mobile is mobile project！"
+    repo: 
+      url: git@172.17.189.70:xxxxx-groups/service-mobile-xxx.git
+      branch: fix-bug
+      sonarFilePath: release/docker/SonarDockerfile
+- name: platform-xxx #第三组
+  parallel: 4 
+  description: "platform-xxx example groups,this is for testing!"
+  projects: 
+  - name: platform-web 
+    mode: dockerfile 
+    description: "platform-web is front-end project！" 
+    repo:
+      url: git@172.17.189.70:xxxxx-groups/platform-xxx.git 
+      branch: develop 
+      sonarFilePath: release/docker/SonarDockerfile
+  - name: platform-service
+    mode: dockerfile
+    description: "platform-service is back-end project！"  
+    repo:
+      url: git@172.17.189.70:xxxxx-groups/platform-service-xxx.git
+      branch: test 
+      sonarFilePath: release/docker/SonarDockerfile 
+  - name: platform-mobile
+    mode: dockerfile
+    description: "platform-mobile is mobile project！"
+    repo: 
+      url: git@172.17.189.70:xxxxx-groups/platform-mobile-xxx.git
+      branch: fix-bug
+      sonarFilePath: release/docker/SonarDockerfile
