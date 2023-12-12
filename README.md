@@ -25,7 +25,7 @@
   docker run -d --name analyzer-scheduler -v /root/analyzer/application-prod.yaml:/app/application-prod.yaml -v /var/run/docker.sock:/var/run/docker.sock 172.17.162.231/devops/analyzer-scheduler:1.0
 ```
 # triggerTimeCron（扫描时间）不会定义怎么办？
-快速生成地址： 
+在线生成地址： 
 - [`pppet`](https://www.pppet.net/)
 - [`cron-ciding`](http://cron.ciding.cc/)
 
