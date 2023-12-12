@@ -29,6 +29,9 @@ insight-chart是一个定义定时扫描任务的项目，并且这些项目集�
 - [`pppet`](https://www.pppet.net/)
 - [`cron-ciding`](http://cron.ciding.cc/)
 
+# SonarDockerfile文件解释
+请参考：[`SonarDockerfile文档`](http://172.17.189.70/sonar/code-analyzer#%E4%BA%8Csonardockerfile%E6%96%87%E4%BB%B6%E5%AE%9A%E4%B9%89)
+
 # 扫描文件样例说明
 ### 样例一：指定具体的参数，不采用全局参数。
 样例文件：[`default`](http://172.17.189.70/sonar/insight-chart/-/blob/develop/examples/default.yaml)
