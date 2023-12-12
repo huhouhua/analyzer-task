@@ -1,0 +1,117 @@
+global:
+  sonar:
+    dockerFilePath: release/docker/SonarDockerfile
+    nativeFilePath: sonar-project.properties
+    mode: dockerfile
+  parallel: 5
+  triggerTimeCron: "0 */40 * * * ?"
+  repo:
+    branch: develop
+groups:
+- name: app
+  parallel: 4
+  description: "应用组"
+  projects:
+  - name: appserver
+    mode: dockerfile
+    description: "appserver"
+    repo:
+      url: git@172.17.189.70:riil-insight/riil-insight-appserver.git
+      branch: develop
+      sonarFilePath: release/docker/SonarDockerfile
+  - name: ruizhi-cbb
+    description: "ruizhi-cbb"
+    repo:
+      url: git@172.17.189.70:ruizhi-cbb/ruizhi-cbb.git
+- name: master-data
+  parallel: 2
+  description: "主数据"
+  projects:
+  - name: riil-insight-ruleengine
+    description: "riil-insight-ruleengine"
+    repo:
+      url: git@172.17.189.70:riil-insight/riil-insight-ruleengine.git
+  - name: riil-insight-dps
+    description: "riil-insight-dps"
+    repo:
+      url: git@172.17.189.70:riil-insight/riil-insight-dps.git
+  - name: riil-insight-mdc
+    description: "riil-insight-mdc"
+    repo:
+      url: git@172.17.189.70:riil-insight/riil-insight-mdc.git
+- name: collection-control
+  parallel: 10
+  description: "采控"
+  projects:
+  - name: riil-insight-ccs
+    description: "riil-insight-ccs"
+    repo:
+      url: git@172.17.189.70:riil-insight/riil-insight-ccs.git
+  - name: riil-insight-dcs
+    description: "riil-insight-dcs"
+    repo:
+      url: git@172.17.189.70:riil-insight/riil-insight-dcs.git
+  - name: riil-insight-ssp-cc
+    description: "riil-insight-ssp-cc"
+    repo:
+      url: git@172.17.189.70:riil-insight/riil-insight-ssp-cc.git
+  - name: riil-insight-dcs-go
+    description: "riil-insight-dcs-go"
+    repo:
+      url: git@172.17.189.70:riil-insight/riil-insight-dcs-go.git
+  - name: riil-insight-dcs-auto
+    description: "riil-insight-dcs-auto"
+    repo:
+      url: git@172.17.189.70:riil-insight/riil-insight-dcs-auto.git
+  - name: riil-insight-dcs-syslog
+    description: "riil-insight-dcs-syslog"
+    repo:
+      url: git@172.17.189.70:riil-insight/riil-insight-dcs-syslog.git
+  - name: riil-insight-dcs-trap
+    description: "riil-insight-dcs-trap"
+    repo:
+      url: git@172.17.189.70:riil-insight/riil-insight-dcs-trap.git
+  - name: riil-insight-dcs-probe
+    description: "riil-insight-dcs-probe"
+    repo:
+      url: git@172.17.189.70:riil-insight/riil-insight-dcs-probe.git
+  - name: riil-insight-dcs-head
+    description: "riil-insight-dcs-head"
+    repo:
+      url: git@172.17.189.70:riil-insight/riil-insight-dcs-head.git
+- name: web
+  parallel: 10
+  description: "前端"
+  projects:
+  - name: riil-insight-frontend
+    description: "前端"
+    repo:
+      url: "git@172.17.189.70:riil-insight/riil-insight-frontend.git"
+  - name: riil-insight-report
+    description: "报表"
+    repo:
+      url: git@172.17.189.70:riil-insight/riil-insight-report.git
+  - name: riil-insight-frontend-starmap
+    description: "星图"
+    repo:
+      url: git@172.17.189.70:riil-insight/riil-insight-frontend-starmap.git
+  - name: riil-insight-uicbb
+    description: "UICBB"
+    repo:
+      url: git@172.17.189.70:riil-insight/riil-insight-uicbb.git
+  - name: cornucopia
+    description: "集成平台"
+    repo:
+      url: git@172.17.189.70:devops/cornucopia.git
+  - name: riil-insight-uicbb-backend
+    description: "uicbb后台"
+    repo:
+      url: git@172.17.189.70:riil-insight/riil-insight-uicbb-backend.git
+  - name: riil-insight-mobile
+    description: "手机端"
+    repo:
+      url: git@172.17.189.70:riil-insight/riil-insight-mobile.git
+  - name: riil-enjoydata-plugin-app
+    description: "乐数"
+    repo:
+      url: git@172.17.189.70:riil-enjoydata/riil-enjoydata-plugin-app.git
