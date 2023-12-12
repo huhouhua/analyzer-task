@@ -94,7 +94,7 @@ groups: #组定义，可以定义多个组，放在最前面的组，最先开�
 - 组的作用主要是区分不同的业务和不同的团队之间的项目，另外两个作用，
 - 第一个是扫描优先级的问题，哪个组需要最开始扫描。
 - 第二个作用是扫描效率问题，为了不影响其他group下的项目扫描时间，有一些项目，可能需要比较长的时间才能扫描完，如果同时扫描多个这种项目的话，那么对服务器的资源消耗比较大，所以比较大的项目，建议放在一组里面，使用parallel参数控制下。
-
+样例文件：[`multipleGroup`](http://172.17.189.70/sonar/insight-chart/-/blob/develop/examples/multipleGroup.yaml)
 ``` yaml
 global:
   sonar:
@@ -181,4 +181,62 @@ groups: #组定义，可以定义多个组，放在最前面的组，最先开�
       url: git@172.17.189.70:xxxxx-groups/platform-mobile-xxx.git
       branch: fix-bug
       sonarFilePath: release/docker/SonarDockerfile
+```
+### 样例三：使用全局配置，全部扫描统一分支、扫描方式。
+``` yaml
+global:
+  sonar:
+    dockerFilePath: release/docker/SonarDockerfile
+    nativeFilePath: sonar-project.properties
+    mode: dockerfile
+  parallel: 3 #并行数，每一组group的项目一次扫描多少个项目，如果group没有指定parallel参数的话，那么会默认使用这个并行数。
+  triggerTimeCron: "0 5 * * 1" #任务扫描时间，这里指定为每周一上午5点开始扫描
+  repo:
+    branch: develop #扫描的仓库分支，如果projects没有指定branch参数的话，那么会默认使用这个分支。
+groups: #组定义，可以定义多个组，放在最前面的组，最先开始扫描。
+- name: app-xxx #组名，可以重复，可以简单的定义为比如xxx业务下所有的前端服务，用英文表示
+  description: "app-xxx example groups,this is for testing!" #组描述
+  projects: # 项目定义
+  - name: app-web #项目名，可以重复
+    description: "app-web is front-end project！"  #项目描述
+    repo: #仓库定义
+      url: git@172.17.189.70:xxxxx-groups/app-xxx.git #仓库地址，只支持ssh方式。
+  - name: app-service
+    description: "app-service is back-end project！"  
+    repo:
+      url: git@172.17.189.70:xxxxx-groups/app-service-xxx.git
+  - name: app-mobile
+    description: "app-mobile is mobile project！"
+    repo: 
+      url: git@172.17.189.70:xxxxx-groups/app-mobile-xxx.git
+- name: service-xxx  #第二组
+  description: "service-xxx example groups,this is for testing!"
+  projects: 
+  - name: service-web 
+    description: "service-web is front-end project！" 
+    repo:
+      url: git@172.17.189.70:xxxxx-groups/service-xxx.git 
+  - name: service-service
+    description: "service-service is back-end project！"  
+    repo:
+      url: git@172.17.189.70:xxxxx-groups/service-service-xxx.git
+  - name: service-mobile
+    description: "service-mobile is mobile project！"
+    repo: 
+      url: git@172.17.189.70:xxxxx-groups/service-mobile-xxx.git
+- name: platform-xxx #第三组
+  description: "platform-xxx example groups,this is for testing!"
+  projects: 
+  - name: platform-web 
+    description: "platform-web is front-end project！" 
+    repo:
+      url: git@172.17.189.70:xxxxx-groups/platform-xxx.git 
+  - name: platform-service
+    description: "platform-service is back-end project！"  
+    repo:
+      url: git@172.17.189.70:xxxxx-groups/platform-service-xxx.git
+  - name: platform-mobile
+    description: "platform-mobile is mobile project！"
+    repo: 
+      url: git@172.17.189.70:xxxxx-groups/platform-mobile-xxx.git
 ```
