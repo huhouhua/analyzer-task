@@ -24,6 +24,10 @@
 ``` shell
   docker run -d --name analyzer-scheduler -v /root/analyzer/application-prod.yaml:/app/application-prod.yaml -v /var/run/docker.sock:/var/run/docker.sock 172.17.162.231/devops/analyzer-scheduler:1.0
 ```
+# triggerTimeCron（扫描时间）不会定义怎么办？
+快速生成地址： 
+- [`pppet`](https://www.pppet.net/)
+- [`cron-ciding`](http://cron.ciding.cc/)
 
 # 扫描文件样例说明
 ### 样例一：指定具体的参数，不采用全局参数。
