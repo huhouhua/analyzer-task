@@ -182,7 +182,7 @@ groups: #组定义，可以定义多个组，放在最前面的组，最先开�
       branch: fix-bug
       sonarFilePath: release/docker/SonarDockerfile
 ```
-### 样例三：使用全局配置，全部扫描统一分支、扫描方式。
+### 样例四：使用全局配置，全部扫描统一分支、扫描方式。
 ``` yaml
 global:
   sonar:
