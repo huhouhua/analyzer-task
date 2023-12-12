@@ -9,7 +9,7 @@ insight-chart是一个定义定时扫描任务的项目，并且这些项目集�
   repository:
     url: "git@172.17.189.70:sonar/insight-chart.git" #git仓库地址，也就是提供扫描任务的仓库，这里指定为insight-chart仓库。
     branch: "develop" #扫描的仓库分支
-    taskFilePath: "/examples/default.yaml" #具体扫描的任务文件
+    taskFilePath: "/tasks/develop.yaml" #具体扫描的任务文件
  ```
 
 # code-analyzer如何部署
