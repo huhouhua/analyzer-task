@@ -13,12 +13,9 @@ groups:
   description: "应用组"
   projects:
   - name: appserver
-    mode: dockerfile
     description: "appserver"
     repo:
       url: git@172.17.189.70:riil-insight/riil-insight-appserver.git
-      branch: develop
-      sonarFilePath: release/docker/SonarDockerfile
   - name: ruizhi-cbb
     description: "ruizhi-cbb"
     repo:
