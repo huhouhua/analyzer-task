@@ -95,10 +95,10 @@ groups: #组定义，可以定义多个组，放在最前面的组，最先开�
       sonarFilePath: release/docker/SonarDockerfile
 ```
 ### 样例三：扫描多组，这里组可以理解一个单元。
+样例文件：[`multipleGroup`](http://172.17.189.70/sonar/insight-chart/-/blob/develop/examples/multipleGroup.yaml)
 - 组的作用主要是区分不同的业务和不同的团队之间的项目，另外两个作用，
 - 第一个是扫描优先级的问题，哪个组需要最开始扫描。
 - 第二个作用是扫描效率问题，为了不影响其他group下的项目扫描时间，有一些项目，可能需要比较长的时间才能扫描完，如果同时扫描多个这种项目的话，那么对服务器的资源消耗比较大，所以比较大的项目，建议放在一组里面，使用parallel参数控制下。
-样例文件：[`multipleGroup`](http://172.17.189.70/sonar/insight-chart/-/blob/develop/examples/multipleGroup.yaml)
 ``` yaml
 global:
   sonar:
