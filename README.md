@@ -3,7 +3,7 @@ insight-chart是一个用于定义定时扫描任务的仓库，并且这些任�
 
 # 准备工作
 
-在[`code-analyzer`](http://172.17.189.70/sonar/code-analyzer#1%E8%B0%83%E5%BA%A6%E9%85%8D%E7%BD%AE)组件运行时，在**application-prod.yaml**文件里指定以下参数，**taskFilePath**可以定义在任何的项目里面。
+在[`调度配置`](http://172.17.189.70/sonar/code-analyzer#1%E8%B0%83%E5%BA%A6%E9%85%8D%E7%BD%AE)组件运行时，在**application-prod.yaml**文件里指定以下参数，**taskFilePath**可以定义在任何的项目里面。
  ``` yaml
  git-repository:
   repository:
