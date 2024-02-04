@@ -251,7 +251,7 @@ groups: #组定义，可以定义多个组，放在最前面的组，最先开�
 1. 扫描结果失败
 ##### 1. 错误消息：**java.lang.RuntimeException: java.lang.Exception: xxxx/SonarDockerfile file not exist!**
 - 该项目xxxx/SonarDockerfile文件不存在， 如果在其他的目录，在扫描文件里面sonarFilePath字段填写下，如果不存在操作， 请创建并配置下这个扫描SonarDockerfile。  
-##### 2. 错误消息：**java.lang.Exception: git clone fail    **
+##### 2. 错误消息：**java.lang.Exception: git clone fail**
 - 克隆仓库失败，检查下这个项目是否存在，和分支。
 - 检查调度组件的克隆私钥是否能被正常使用，[`code-analyzer`](http://172.17.189.70/sonar/code-analyzer)
 
