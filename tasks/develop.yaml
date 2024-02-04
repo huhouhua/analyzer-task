@@ -4,7 +4,7 @@ global:
     nativeFilePath: sonar-project.properties
     mode: dockerfile
   parallel: 5
-  triggerTimeCron: "*/10 * * * *" #每一个小时执行一次
+  triggerTimeCron: "0/30 * * * * ?" #每一个小时执行一次
   repo:
     branch: develop
 groups:
