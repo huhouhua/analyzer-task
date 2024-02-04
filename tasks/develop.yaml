@@ -16,6 +16,7 @@ groups:
     description: "appserver"
     repo:
       url: git@172.17.189.70:riil-insight/riil-insight-appserver.git
+      branch: feature-v2.0-design
   - name: ruizhi-cbb
     description: "ruizhi-cbb"
     repo:
