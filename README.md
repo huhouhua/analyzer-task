@@ -34,7 +34,7 @@ global:
     nativeFilePath: sonar-project.properties
     mode: dockerfile
   parallel: 5 #并行数，每一组group的项目一次扫描多少个项目，如果group没有指定parallel参数的话，那么会默认使用这个并行数。
-  triggerTimeCron: "0 5 * * 1" #任务扫描时间，这里指定为每周一上午5点开始扫描
+  triggerTimeCron: "0 0 6 ? * MON" #任务扫描时间,每周一上午6点开始扫描
   repo:
     branch: develop #扫描的仓库分支，如果projects没有指定branch参数的话，那么会默认使用这个分支。
 groups: #组定义，可以定义多个组，放在最前面的组，最先开始扫描。
@@ -59,7 +59,7 @@ global:
     nativeFilePath: sonar-project.properties
     mode: dockerfile
   parallel: 5 #并行数，每一组group的项目一次扫描多少个项目，如果group没有指定parallel参数的话，那么会默认使用这个并行数。
-  triggerTimeCron: "0 5 * * 1" #任务扫描时间，这里指定为每周一上午5点开始扫描
+  triggerTimeCron: "0 0 6 ? * MON" #任务扫描时间,每周一上午6点开始扫描
   repo:
     branch: develop #扫描的仓库分支，如果projects没有指定branch参数的话，那么会默认使用这个分支。
 groups: #组定义，可以定义多个组，放在最前面的组，最先开始扫描。
@@ -101,7 +101,7 @@ global:
     nativeFilePath: sonar-project.properties
     mode: dockerfile
   parallel: 5 #并行数，每一组group的项目一次扫描多少个项目，如果group没有指定parallel参数的话，那么会默认使用这个并行数。
-  triggerTimeCron: "0 5 * * 1" #任务扫描时间，这里指定为每周一上午5点开始扫描
+  triggerTimeCron: "0 0 6 ? * MON" #任务扫描时间,每周一上午6点开始扫描
   repo:
     branch: develop #扫描的仓库分支，如果projects没有指定branch参数的话，那么会默认使用这个分支。
 groups: #组定义，可以定义多个组，放在最前面的组，最先开始扫描。
