@@ -241,9 +241,17 @@ groups: #组定义，可以定义多个组，放在最前面的组，最先开�
 ```
 
 # FAQ
-#### triggerTimeCron（扫描时间）不会定义怎么办？
+#### 1. triggerTimeCron（扫描时间）不会定义怎么办？
 在线生成地址： 
 - [`pppet`](https://www.pppet.net/)
 - [`cron-ciding`](http://cron.ciding.cc/)
 
-#### SonarDockerfile文件解释，请参考[`SonarDockerfile文档`](http://172.17.189.70/sonar/code-analyzer#%E4%BA%8Csonardockerfile%E6%96%87%E4%BB%B6%E5%AE%9A%E4%B9%89)
+#### 2. 常见问题
+
+1. 扫描结果失败
+- 错误消息：**java.lang.RuntimeException: java.lang.Exception: xxxx/SonarDockerfile file not exist! **
+- 该项目xxxx/SonarDockerfile文件不存在， 如果在其他的目录，在扫描文件里面sonarFilePath字段填写下，如果不存在操作， 请创建并配置下这个扫描SonarDockerfile。  
+
+    
+
+#### 3. SonarDockerfile文件解释，请参考[`SonarDockerfile文档`](http://172.17.189.70/sonar/code-analyzer#%E4%BA%8Csonardockerfile%E6%96%87%E4%BB%B6%E5%AE%9A%E4%B9%89)
