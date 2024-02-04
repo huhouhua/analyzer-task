@@ -22,7 +22,7 @@ insight-chart是一个用于定义定时扫描任务的仓库，并且这些任�
 ```
 ### 3. 运行
 ``` shell
-  docker run -d --name analyzer-scheduler -v /root/analyzer/application-prod.yaml:/app/application-prod.yaml -v /var/run/docker.sock:/var/run/docker.sock 172.17.162.231/devops/analyzer-scheduler:1.0
+  docker run -d --name analyzer-scheduler --restart always  -v /root/analyzer/application-prod.yaml:/app/application-prod.yaml -v /var/run/docker.sock:/var/run/docker.sock 172.17.162.231/devops/analyzer-scheduler:1.0
 ```
 # 扫描文件样例说明
 ### 样例一：指定具体的参数，不采用全局参数。
